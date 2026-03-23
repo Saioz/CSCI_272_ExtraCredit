@@ -64,9 +64,10 @@ if (iss >> openParan >> areaCode) {
     //should only be able to run if all the strings are completely valid, all integers no mixed inputs "00A" or "OO0" etc.
     
     }
-    return false;
+   
     }
-    return false;
+  return false;
+}
 }
 
 int main() {
@@ -84,8 +85,8 @@ string input;
     }
         return 0;
 
-}
 
+}
 
 
 /*
