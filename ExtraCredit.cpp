@@ -42,9 +42,9 @@ if (iss >> openParan >> areaCode >> closeParan >> firstPart >> separator >> seco
     
     if(isValid) {
         if (openParan == '(' && closeParan == ')' && separator == '-' &&
-    areaCodeString.length() == 3 && 
-    firstPartString.length()==3 && 
-    secondPartString.length()==4 ) {
+    areaCode.length() == 3 && 
+    firstPart.length()==3 && 
+    secondPart.length()==4 ) {
             return isValid;
     }
     //should only be able to run if all the strings are completely valid, all integers no mixed inputs "00A" or "OO0" etc.
