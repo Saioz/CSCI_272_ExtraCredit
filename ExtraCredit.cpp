@@ -16,13 +16,11 @@ bool isValid{};
 
 
 if (iss >> openParan >> areaCode >> closeParan >> firstPart >> separator >> secondPart) {
-
     string areaCodeString = to_string(areaCode);
     string firstPartString = to_string(firstPart);
     string secondPartString = to_string(secondPart);
- 
+    //tostring from int to string
     isValid = true;
-    
     
     for (int i = 0; i < areaCodeString.length(); i++) {
             if (!isdigit(areaCodeString[i])) {
@@ -42,21 +40,21 @@ if (iss >> openParan >> areaCode >> closeParan >> firstPart >> separator >> seco
                 break;
             }
         }
+    //checks to_string, makes sure they are all integers / digits from 0-9
+    
     if(isValid) {
         if (openParan == '(' && closeParan == ')' && separator == '-' &&
     areaCodeString.length() == 3 && 
     firstPartString.length()==3 && 
-    secondPartString.length()==4)
-    {
+    secondPartString.length()==4) {
             return isValid;
     }
-       
-    }
-      
-    }
-    return isValid;
+    //should only be able to run if all the strings are completely valid, all integers no mixed inputs "00A" or "OO0" etc.
     
-    
+    }
+    return false;
+    }
+    return false;
 }
 
 int main() {
