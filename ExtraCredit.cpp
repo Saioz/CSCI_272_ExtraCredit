@@ -48,13 +48,15 @@ if (iss >> openParan >> areaCode >> closeParan >> firstPart >> separator >> seco
     firstPartString.length()==3 && 
     secondPartString.length()==4)
     {
-            return true;
+            return isValid;
     }
-        return false;
+       
     }
       
     }
-    return false;
+    return isValid;
+    
+    
 }
 
 int main() {
