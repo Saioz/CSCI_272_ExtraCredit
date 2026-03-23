@@ -52,14 +52,15 @@ if (iss >> openParan >> areaCode >> closeParan >> firstPart >> separator >> seco
     }
         return false;
     }
-        return false;
+      
     }
+    return false;
 }
 
 int main() {
 string input;
 
-    cout << "Enter a U.S phone number xxx - xxx - xxxx: ";
+    cout << "Enter a U.S phone number (xxx) xxx-xxxx: ";
     getline(cin, input);
 
     if (isValidPhoneNumber(input)) {
