@@ -15,10 +15,14 @@ string areaCode, firstPart, secondPart;
 bool isValid{};
 
 
-if (iss >> openParan >> areaCode >> closeParan >> firstPart) {
-    separator  = firstPart[firstPart.find('-')];  
-    secondPart = firstPart.substr(firstPart.find('-') + 1);
-    firstPart  = firstPart.substr(0, firstPart.find('-'));
+if (iss >> openParan >> areaCode) {
+        closeParan = areaCode.back();
+        areaCode   = areaCode.substr(0, areaCode.length() - 1);
+
+        if (iss >> firstPart) {
+            separator  = firstPart[firstPart.find('-')];
+            secondPart = firstPart.substr(firstPart.find('-') + 1);
+            firstPart  = firstPart.substr(0, firstPart.find('-'));
     //(xxx) xxx-xxxx the later xxx-xxxx becomes merged all into firstPart for some reason? 
     //This should fix it hopefully
  
@@ -81,3 +85,23 @@ string input;
         return 0;
 
 }
+
+
+
+/*
+
+initial testing with int : leading zeros are gone
+
+Enter a U.S phone number xxx - xxx - xxxx: (999) 1-1
+openParan: (
+areaCode: 999
+closeParan: )
+firstPart: 1
+separator: -
+secondPart: 1
+Valid.
+
+
+my solution was to change it to string,
+
+*/
