@@ -41,10 +41,12 @@ if (iss >> openParan >> areaCode >> closeParan >> firstPart >> separator >> seco
     //checks to_string, makes sure they are all integers / digits from 0-9
     
     if(isValid) {
-        if (openParan == '(' && closeParan == ')' && separator == '-' &&
+        if (openParan == '(' &&
     areaCode.length() == 3 && 
-    firstPart.length()==3 && 
-    secondPart.length()==4 ) {
+    closeParan == ')' && 
+    firstPart.length()== 3 && 
+    separator == '-' &&
+    secondPart.length()== 4) {
             return isValid;
     }
     //should only be able to run if all the strings are completely valid, all integers no mixed inputs "00A" or "OO0" etc.
