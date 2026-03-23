@@ -16,6 +16,7 @@ bool isValid{};
 
 
 if (iss >> openParan >> areaCode >> closeParan >> firstPart) {
+    separator  = firstPart[firstPart.find('-')];  
     secondPart = firstPart.substr(firstPart.find('-') + 1);
     firstPart  = firstPart.substr(0, firstPart.find('-'));
     //(xxx) xxx-xxxx the later xxx-xxxx becomes merged all into firstPart for some reason? 
