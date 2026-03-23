@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <cctype>
 
 using namespace std;
 
@@ -11,27 +12,48 @@ char openParan, closeParan, separator;
 
 int areaCode, firstPart, secondPart;
 
+bool isValid{};
+
+
 if (iss >> openParan >> areaCode >> closeParan >> firstPart >> separator >> secondPart) {
 
     string areaCodeString = to_string(areaCode);
     string firstPartString = to_string(firstPart);
     string secondPartString = to_string(secondPart);
+ 
+    isValid = true;
     
     
-    
-    if (openParan == '(' && closeParan == ')' && separator == '-' &&
+    for (int i = 0; i < areaCodeString.length(); i++) {
+            if (!isdigit(areaCodeString[i])) {
+                isValid = false;
+                break;
+            }
+        }
+    for (int i = 0; i < firstPartString.length(); i++) {
+            if (!isdigit(firstPartString[i])) {
+                isValid = false;
+                break;
+            }
+        }
+    for (int i = 0; i < secondPartString.length(); i++) {
+            if (!isdigit(secondPartString[i])) {
+                isValid = false;
+                break;
+            }
+        }
+    if(isValid) {
+        if (openParan == '(' && closeParan == ')' && separator == '-' &&
     areaCodeString.length() == 3 && 
     firstPartString.length()==3 && 
-    secondPartString.length()==4 &&
-    areaCode <=999 &&
-    firstPart <= 999 &&
-    secondPart <=9999)
+    secondPartString.length()==4)
     {
             return true;
     }
         return false;
     }
-    return false;
+        return false;
+    }
 }
 
 int main() {
