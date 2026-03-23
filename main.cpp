@@ -9,9 +9,6 @@ istringstream iss(input);
 char openParan, closeParan, separator;
 
 string areaCode, firstPart, secondPart;
-
-    
-    
     if (iss >> openParan >> areaCode >> closeParan >> firstPart >> separator >> secondPart) { 
         if (areaCode.length() == 3 && firstPart.length()==3 && secondPart.length()==4) {
             return true;
