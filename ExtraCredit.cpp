@@ -18,7 +18,8 @@ bool isValid{};
 if (iss >> openParan >> areaCode) {
         closeParan = areaCode.back();
         areaCode   = areaCode.substr(0, areaCode.length() - 1);
-
+//can't direectly use closeParan since the string disregards this. 
+//had to use string because unfortunately, int has issues with leading zeros. And to_string doesn't like that, so it just copies it over. 
         if (iss >> firstPart) {
             separator  = firstPart[firstPart.find('-')];
             secondPart = firstPart.substr(firstPart.find('-') + 1);
@@ -26,8 +27,6 @@ if (iss >> openParan >> areaCode) {
     //(xxx) xxx-xxxx the later xxx-xxxx becomes merged all into firstPart for some reason? 
     //This should fix it hopefully
  
-
-
 
     //tostring from int to string
     isValid = true;
